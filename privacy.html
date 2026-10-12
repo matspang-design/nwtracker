@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NWtracker Privacy Policy</title>
+<meta name="description" content="How NWtracker handles financial data: a private, locally-run personal net-worth tracker.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">NWtracker</p>
+  <h1>Privacy Policy</h1>
+  <div class="meta">
+    <span>Last updated 12 October 2026</span>
+    <span>Version 1.0</span>
+  </div>
+
+  <hr>
+
+  <div class="summary">
+    <p class="eyebrow">The short version</p>
+    <p>NWtracker is a personal budgeting program that one private individual runs on their own computer, for their own household. It has no servers, no accounts for other people, and no analytics. Your financial data is written to a file on your own machine and is never sent anywhere else.</p>
+    <p>The only data that leaves the computer is the request the program makes to a bank or exchange <em>you</em> have chosen to connect, and that access is read-only.</p>
+  </div>
+
+  <section>
+    <h2><span class="num">1</span>Who is responsible</h2>
+    <p>NWtracker is not a company and not a public service. It is a program written and operated by one private individual (the operator) for their own household's use. The operator is both the controller of the data and, together with members of their household, its only subject.</p>
+    <p>No account is offered to anyone else, and no one outside the operator's household can use the program or see its data.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>What the program reads</h2>
+    <p>Only where the operator explicitly connects a source:</p>
+    <ul>
+      <li>Account balances and booked transactions from a bank account, through an authorised open-banking provider.</li>
+      <li>Balances and holdings from a crypto exchange, through a read-only API key.</li>
+      <li>Files the operator exports and places in the program's folder: bank statement exports, broker statements, payroll documents.</li>
+    </ul>
+    <p>Access to a bank is limited to balances and transactions. The program never initiates a payment or a transfer and does not request permission to do so.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>Where the data is kept</h2>
+    <p>In a database file on the operator's own computer. The dashboard is served only to <code>127.0.0.1</code> — the computer itself — unless the operator deliberately turns on access from their own home network, which is protected by a PIN.</p>
+    <p>There is no cloud component, no hosted backend and no remote backup. Nothing is uploaded, because there is nowhere for it to be uploaded to.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>What is deliberately not stored</h2>
+    <p>Some information is refused at the point of entry, so no later part of the program can reintroduce it:</p>
+    <ul>
+      <li><strong>Account numbers</strong> are stored as a one-way hash plus a masked form such as <code>DE89…5136</code>. The full number is never written to the database.</li>
+      <li><strong>Payroll documents</strong> are read for money only — gross, net, amount paid. Tax identifiers, social-security numbers, dates of birth, health-insurer names and religious affiliation are not extracted, even though they appear on the document.</li>
+      <li><strong>Email addresses and long reference numbers</strong> are stripped out of transaction descriptions before they are stored.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>Credentials</h2>
+    <p>An API key, its secret, and the private key used to sign open-banking requests stay on the operator's computer, as environment variables and as a file on disk. They are never written into the program's configuration, its database, its logs, or any error message, and they are never transmitted anywhere except to the institution they authenticate against.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>Who the data is shared with</h2>
+    <p>Nobody. The data is not sold, not shared, not used for advertising, and not used to train anything. There are no third-party analytics, no tracking, no crash reporting and no telemetry of any kind.</p>
+    <p>The open-banking provider that carries a bank connection necessarily handles that account's data in transit under its own privacy policy, as the licensed party in that arrangement. No other third party is involved.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">7</span>How long it is kept</h2>
+    <p>Until the operator deletes it. Deleting the database file removes everything the program has stored; the file can be rebuilt at any time from the original exports.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">8</span>Withdrawing access</h2>
+    <p>A bank consent can be withdrawn at any time, either in the open-banking provider's control panel or directly in the bank's own online banking, under third-party access. An exchange API key can be deleted in the exchange's own settings. Either action takes effect immediately and independently of this program.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">9</span>Your rights</h2>
+    <p>Because the operator and the data subject are the same person, the rights under the GDPR — access, rectification, erasure, portability, objection — are exercised directly: the data sits in a file the operator owns, in an open format, on their own machine.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">10</span>Contact</h2>
+    <p>Questions about this policy or about the data the program holds go to the operator, at the data-protection address given when the application was registered: <code>matspang@gmail.com</code></p>
+  </section>
+
+  <section>
+    <h2><span class="num">11</span>Changes</h2>
+    <p>If the program's behaviour changes in a way that affects any of the above, this page is updated and the date at the top changes with it.</p>
+  </section>
+
+  <footer>
+    <p>NWtracker is a private, non-commercial program. It is not a financial service, it does not give financial advice, and it holds no money.</p>
+  </footer>
+</div>
+</body>
+</html>
